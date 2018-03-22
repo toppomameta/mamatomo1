@@ -1,0 +1,34 @@
+<div class="row">
+<!--left_side-->
+  <div class="col-md-4 text-left">
+    <div class="thumbnail">
+      <img alt="著者イメージ" src="https://archive.fo/2BLPU/007b5291982bb1ef5b8b34ea9bb096a9a5028c12.jpeg" title="著者イメージ">
+      <div class="caption text-center">
+        <h3>sparta</h3>
+        <p>hogehoge</p>
+      </div>
+    </div>
+    <div class="list-group">
+      <!-- 5件だけ記事を表示するように制御します -->
+        <a class="list-group-item" href="/posts/7">てすと</a>
+        <a class="list-group-item" href="/posts/6">なりなり</a>
+        <a class="list-group-item" href="/posts/5">なるなる２</a>
+        <a class="list-group-item" href="/posts/4">テスト</a>
+        <a class="list-group-item" href="/posts/2">title</a>
+    </div>
+  </div>
+
+<div class="col-md-8">
+  <% @posts.each do |post| %>
+    <div class="article">
+      <h2>タイトル：<%= post.title %></h2>
+      <p>カテゴリ：<%= post.category %></p>
+      <p>作成日：<%= post.created_at %></p>
+      <p><%= truncate(post.body, length: 50) %></p>
+      <p><%= link_to "続きを読む", post, class: "btn btn-default" %></p>
+    </div>
+  <% end %>
+
+</div>
+
+</div>
